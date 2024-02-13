@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Design by foolishdeveloper.com -->
+    <title>Login Page</title>
+ 
+    
+    <!--Stylesheet-->
+    <style media="screen">
+        * {
+            box-sizing: border-box;
+        }
+    
+        body {
+            margin: 0;
+            height: 100vh;
+            width: 100vw;
+            overflow: hidden;
+            font-family: "Lato", sans-serif;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #555;
+            background-image: radial-gradient(circle, #98ba55, #5f93b8);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    
+        .login-div {
+            width: 430;
+            height: 700px;
+            padding: 60px 35px 35px 35px;
+            border-radius: 40px;
+            background-color: #ecf0f3;
+            box-shadow: 13px 13px 20px #709447,
+            -13px -13px 20px #709447;
+        }
+    
+        .logo {
+            background: url(https://www.svgrepo.com/show/384715/user-application-identity-authentication-login.svg);
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 0 auto;
+            box-shadow: 0px 0px 2px #5f5f5f, 
+            0px 0px 0px 5px #ecf0f3,
+            8px 8px 15px #a7aaaf,
+            -8px -8px 15px #fff;
+        }
+    
+        .title {
+            text-align: center;
+            font-size: 28px;
+            padding-top: 24px;
+            letter-spacing: 0.5px;
+        }
+    
+        .fields {
+            width: 100%;
+            padding: 75px 5px 5px 5px;
+        }
+    
+        .fields input {
+            border: none;
+            outline: none;
+            background: none;
+            font-size: 17px;
+            color: #555;
+            padding: 20px 10px 20px 5px;
+        }
+    
+        .username, .password {
+            margin-bottom: 30px;
+            border-radius: 25px;
+            box-shadow: inset 8px 8px 8px #cbced1,
+            inset -8px -8px 8px #fff;
+        }
+    
+        .fields svg {
+            height:  22px;
+            margin: 0 10px -3px 25px;
+        }
+    
+        button {
+            outline: none;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            height: 60px;
+            border-radius: 30px;
+            font-size: 20px;
+            font-weight: 700;
+            font-family: "Lato", sans-serif;
+            color: #fff;
+            text-align: center;
+            background-color: #02c8db;
+            box-shadow: 3px 3px 8px #b1b1b1,
+            -3px -3px 8px #fff;
+            transition: all 0.5s;
+        }
+    
+        button:hover {
+            background-color: #50e5b9;
+        }
+    
+        button:active {
+            background-color: #88ef9e;
+        }
+    
+        .link {
+            padding-top: 20px;
+            text-align: center;
+        }
+    
+        .link a {
+            text-decoration: none;
+            color: #aaa;
+            font-size: 15px;
+        }
+    </style>
+</head>
+<body>
+    <form method="post">
+        {% csrf_token %}
+        <div class="login-div">
+            <div class="logo"></div>
+            <div class="title">Login</div>
+            <div class="fields">
+                <div class="username">
+                    <svg xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 48 48" id="user">
+                        <path fill="#42c3cf" d="M31.64,27.72a13.94,13.94,0,0,1-15.28,0A18,18,0,0,0,6.05,42.94a1,1,0,0,0,.27.75,1,1,0,0,0,.73.31H41a1,1,0,0,0,.73-.31,1,1,0,0,0,.27-.75A18,18,0,0,0,31.64,27.72Z"></path><circle cx="24" cy="16" r="12" fill="#42c3cf"></circle>
+                    </svg>
+                    <input type="username" class="user-input" placeholder="username" name="username">
+                </div>
+                <div class="password">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" id="lockpassword">
+                        <path fill="#53d86a" d="M2 16C2 13.1716 2 11.7574 2.87868 10.8787C3.75736 10 5.17157 10 8 10H16C18.8284 10 20.2426 10 21.1213 10.8787C22 11.7574 22 13.1716 22 16C22 18.8284 22 20.2426 21.1213 21.1213C20.2426 22 18.8284 22 16 22H8C5.17157 22 3.75736 22 2.87868 21.1213C2 20.2426 2 18.8284 2 16Z" class="coloraaaaaa svgShape"></path><path fill="#595bd4" d="M8 17C8.55228 17 9 16.5523 9 16 9 15.4477 8.55228 15 8 15 7.44772 15 7 15.4477 7 16 7 16.5523 7.44772 17 8 17zM12 17C12.5523 17 13 16.5523 13 16 13 15.4477 12.5523 15 12 15 11.4477 15 11 15.4477 11 16 11 16.5523 11.4477 17 12 17zM17 16C17 16.5523 16.5523 17 16 17 15.4477 17 15 16.5523 15 16 15 15.4477 15.4477 15 16 15 16.5523 15 17 15.4477 17 16zM6.75 8C6.75 5.10051 9.10051 2.75 12 2.75 14.8995 2.75 17.25 5.10051 17.25 8V10.0036C17.8174 10.0089 18.3135 10.022 18.75 10.0546V8C18.75 4.27208 15.7279 1.25 12 1.25 8.27208 1.25 5.25 4.27208 5.25 8V10.0546C5.68651 10.022 6.18264 10.0089 6.75 10.0036V8z" class="color111111 svgShape"></path>
+                    </svg>
+                    <input type="password" class="pass-input" placeholder="password" name="password">
+                </div>
+                {% if messages %}
+        <ul class="messages">
+        {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+        </ul>
+        {%endif%}
+            </div>
+            <button type="submit">Login</button>
+            <div class="link">
+                <a href="#">Forgot password</a> or <a href="{% url 'signup' %}">Sign Up</a>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
