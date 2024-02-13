@@ -12,7 +12,7 @@ User Authentication: Secure access to the system with user authentication and au
 Technologies Used:
   Django: Python web framework for backend development.
   Django REST Framework: Toolkit for building Web APIs with Django.
-  PostgreSQL: Relational database management system for storing data.
+  MySQL: Relational database management system for storing data.
   HTML/CSS/JavaScript: Frontend development for user interface.
 
 Setup Instructions:
